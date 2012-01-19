@@ -1,0 +1,24 @@
+#!/bin/sh
+
+git submodule init
+git submodule update
+cd ~/.vim/bundle 
+for i in `ls`
+do cd $i;
+    if [ -e .git ]; then
+        git checkout master; git pull; 
+    fi;
+
+    if [ -e .hg ]; then
+        hg pull; hg up; 
+    fi;
+    
+    cd ..
+done
+
+# update easytags
+mkdir -p  ~/.vim/bundle/vim-easytags
+cd  ~/.vim/bundle/vim-easytags
+wget  http://peterodding.com/code/vim/downloads/easytags
+unzip easytags
+rm -rf easytags

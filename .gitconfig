@@ -1,0 +1,36 @@
+[user]
+	name = Terry Huang
+	email = terryh.tp@gmail.com
+[diff]
+	external = git_diffwrap.sh
+[pager]
+	diff =
+[core]
+	excludesfile = /home/terry/.gitignore
+	filemode = false
+[branch]
+	autosetuprebase = always
+[gui]
+	spellingdictionary = en_US
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	di = diff
+	dio = diff --no-ext-diff
+	lo = log
+	br = branch
+	sf = svn fetch
+	sr = svn rebase
+	sci = svn dcommit
+[merge]
+	tool = vimdiff
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 403
+	main-window-view = HistoryView
+	file-view-vpane-position = 290
+	file-view-hpane-position = 215
