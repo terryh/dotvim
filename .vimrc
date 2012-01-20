@@ -7,7 +7,7 @@ call vundle#rc()
 " git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'rvandew/supertab.git'
+Bundle 'ervandew/supertab.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'msanders/snipmate.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
