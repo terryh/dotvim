@@ -77,6 +77,7 @@ set autoread        " auto read when file is changed from outside
 set hid             " change buffer
 set ruler
 set nofoldenable    " disable folding
+set completeopt=longest,menuone
 
 "-------------------------------------------------------------------------------
 " Tab
@@ -145,7 +146,7 @@ endfunc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
@@ -221,3 +222,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " jslint
 nmap <leader>j   :JSLintUpdate<CR>
+
+" close tag, cause  
+" iabbrev </ </<C-X><C-O>
