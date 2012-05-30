@@ -29,6 +29,8 @@ Bundle 'xolox/vim-easytags.git'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'hallettj/jslint.vim.git'
 Bundle 'godlygeek/tabular.git'
+Bundle 'Lokaltog/vim-powerline.git'
+
 
 " vim-scripts repos
 Bundle 'L9'
@@ -98,8 +100,8 @@ hi CursorLine   guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=234  cter
 hi CursorColumn guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=NONE cterm=BOLD
 
 set laststatus=2
-set statusline=%F%m%r%h%w\ [FORMAT=%{&fileformat}]\ [ENCODE=%{&encoding}]
-set statusline+=\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&fileformat}]\ [ENCODE=%{&encoding}]
+"set statusline+=\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set cursorline
 
 if has('gui_running')
