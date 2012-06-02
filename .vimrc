@@ -12,7 +12,6 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'msanders/snipmate.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'sukima/xmledit.git'
 Bundle 'sjl/gundo.vim.git'
 
 " exact to pyflakes-vim/ftplugin/python
@@ -30,11 +29,10 @@ Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'hallettj/jslint.vim.git'
 Bundle 'godlygeek/tabular.git'
 Bundle 'Lokaltog/vim-powerline.git'
-
-
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'edsono/vim-matchit.git'
+Bundle 'tpope/vim-ragtag.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 "-------------------------------------------------------------------------------
 " VimTip382: Search for <cword> and replace with input() in all open buffers 
@@ -206,8 +204,6 @@ let g:SuperTabDefaultCompletionType = "context"
 nmap <F9> :NERDTreeToggle<CR>
 "let NERDTreeWinPos = "left"
 
-"Fuzzyfinder
-nmap ff :FufFile<CR>
 " bind tab like  next buffer, C+tab don't work
 nmap <C-X> <ESC>:bn<CR>
 
