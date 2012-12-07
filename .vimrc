@@ -15,8 +15,7 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
-
-
+Bundle "garbas/vim-snipmate"
 
 " exact to pyflakes-vim/ftplugin/python
 " https://github.com/kevinw/pyflakes/zipball/master
