@@ -9,10 +9,14 @@ Bundle 'gmarik/vundle'
 
 Bundle 'ervandew/supertab.git'
 Bundle 'tpope/vim-surround.git'
-Bundle 'msanders/snipmate.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'sjl/gundo.vim.git'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+
+
 
 " exact to pyflakes-vim/ftplugin/python
 " https://github.com/kevinw/pyflakes/zipball/master
@@ -24,7 +28,6 @@ Bundle 'vim-scripts/javacomplete.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'rosstimson/scala-vim-support.git'
 Bundle 'Raimondi/delimitMate.git'
-Bundle 'xolox/vim-easytags.git'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'hallettj/jslint.vim.git'
 Bundle 'godlygeek/tabular.git'
@@ -158,36 +161,12 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType python inoremap <buffer> $f ######################################################<cr># <esc>a
 autocmd FileType python inoremap <buffer> $c #--- PH ----------------------------------------------<esc>FP2xi
 
-" Django http://code.djangoproject.com/wiki/UsingVimWithDjango
-let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
-let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
-let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
-let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
-let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 
 " clean up all html tags
 nmap <F7> <ESC>:%s/<[^>]*>//g
 
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
-
-" Writing Restructured Text (Sphinx Documentation) {
-   " Ctrl-l 1:    underline Parts w/ #'s
-   noremap  <C-l>1 yyPVr#yyjp
-   inoremap <C-l>1 <esc>yyPVr#yyjpA
-   " Ctrl- 2:    underline Chapters w/ *'s
-   noremap  <C-l>2 yyPVr*yyjp
-   inoremap <C-l>2 <esc>yyPVr*yyjpA
-   " Ctrl-l 3:    underline Section Level 1 w/ ='s
-   noremap  <C-l>3 yypVr=
-   inoremap <C-l>3 <esc>yypVr=A
-   " Ctrl-l 4:    underline Section Level 2 w/ -'s
-   noremap  <C-l>4 yypVr-
-   inoremap <C-l>4 <esc>yypVr-A
-   " Ctrl-l 5:    underline Section Level 3 w/ ^'s
-   noremap  <C-l>5 yypVr^
-   inoremap <C-l>5 <esc>yypVr^A
-"}
 
 "-------------------------------------------------------------------------------
 " Plugins
@@ -207,16 +186,32 @@ nmap <F9> :NERDTreeToggle<CR>
 " bind tab like  next buffer, C+tab don't work
 nmap <C-X> <ESC>:bn<CR>
 
+
+" Tabular
+"let mapleader=','
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+ 
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+
+
 " buftabs.vim
 map <C-LEFT> <ESC>:bp<CR>
 map <C-RIGHT> <ESC>:bn<CR>
-
-" avoid easytags complain  miniBufexpl set this to 300
-" let g:easytags_updatetime_min=300
-let g:easytags_updatetime_autodisable=1
-
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
 
 " jslint
 nmap <leader>j   :JSLintUpdate<CR>
