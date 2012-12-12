@@ -34,6 +34,8 @@ Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'edsono/vim-matchit.git'
 Bundle 'tpope/vim-ragtag.git'
+
+Bundle 'jnwhiteh/vim-golang.git'
 " vim-scripts repos
 
 "-------------------------------------------------------------------------------
