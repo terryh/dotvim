@@ -17,15 +17,9 @@ Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 
-" exact to pyflakes-vim/ftplugin/python
-" https://github.com/kevinw/pyflakes/zipball/master
-Bundle 'kevinw/pyflakes-vim.git'
-
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'mattn/zencoding-vim.git'
-Bundle 'vim-scripts/javacomplete.git'
 Bundle 'majutsushi/tagbar.git'
-Bundle 'rosstimson/scala-vim-support.git'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'hallettj/jslint.vim.git'
@@ -35,8 +29,14 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'edsono/vim-matchit.git'
 Bundle 'tpope/vim-ragtag.git'
 
+Bundle 'spf13/PIV.git'
+Bundle 'vim-scripts/javacomplete.git'
+Bundle 'rosstimson/scala-vim-support.git'
 Bundle 'jnwhiteh/vim-golang.git'
-Bundle 'jnwhiteh/vim-golang.git'
+" exact to pyflakes-vim/ftplugin/python
+" https://github.com/kevinw/pyflakes/zipball/master
+Bundle 'kevinw/pyflakes-vim.git'
+
 Bundle 'scrooloose/syntastic.git'
 " vim-scripts repos
 
