@@ -36,6 +36,8 @@ Bundle 'edsono/vim-matchit.git'
 Bundle 'tpope/vim-ragtag.git'
 
 Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'scrooloose/syntastic.git'
 " vim-scripts repos
 
 "-------------------------------------------------------------------------------
