@@ -114,7 +114,8 @@ if has('gui_running')
 endif
 
 set list "show tab and end of line
-set listchars=tab:>-
+""set listchars=tab:>-
+set listchars=tab:\|\ 
 set ffs=unix
 set ff=unix
 set mouse=a
@@ -151,6 +152,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType python set ft=python.django
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+autocmd BufRead,BufNewFile *.go set noet ts=4 sw=4
 
 "-------------------------------------------------------------------------------
 " Keyboard ShortCuts
