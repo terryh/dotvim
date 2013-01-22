@@ -20,7 +20,7 @@ Bundle "garbas/vim-snipmate"
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'majutsushi/tagbar.git'
-"Bundle 'Raimondi/delimitMate.git'
+Bundle 'Raimondi/delimitMate.git'
 Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'hallettj/jslint.vim.git'
 Bundle 'godlygeek/tabular.git'
@@ -39,8 +39,8 @@ Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'kevinw/pyflakes-vim.git'
 
 Bundle 'scrooloose/syntastic.git'
-" vim-scripts repos
 
+" vim-scripts repos
 "-------------------------------------------------------------------------------
 " VimTip382: Search for <cword> and replace with input() in all open buffers 
 "-------------------------------------------------------------------------------
